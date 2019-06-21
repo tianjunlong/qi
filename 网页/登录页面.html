@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>华为账号-登录</title>
+		<link rel="stylesheet" type="text/css" href="css/登录.css"/>
+		<link rel="shortcut icon" href="https://www.vmall.com/favicon.ico" />
+	</head>
+	<body style="min-width: 100%;background: #EBEBEB;">
+		<div class="nav_bad">
+			<img src="img/logohuawei.png" class="logohuawei">
+			<span class="logo_xa">|</span>
+			<span class="logo_wz">华为商城</span>
+			<div class="ts">
+				<span class="zhuyiwz"><img src="img/zhuyi.png" class="zhuyi">&nbsp;&nbsp;依据《网络安全法》，为保障您的帐号安全与正常使用，请尽快绑定您的手机号，感谢您的理解及支持！</span>
+			</div>
+			<div class="by_bj" style="background-color: #081638;>
+				<p class="bj_tianchong1"></p>
+				<img src="img/bj.png" class="bj_t">
+			</div>
+			<div class="h_wei">	
+				<span class="h_1"><a href="#">华为帐号用户协议</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">关于华为帐号与隐私的声明</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">常见问题</a></span>
+				<span class="h_2">Copyright&nbsp;©&nbsp;2011-2019&nbsp;&nbsp;华为软件技术有限公司&nbsp;&nbsp;版权所有&nbsp;&nbsp;保留一切权利&nbsp;&nbsp;苏B2-20070200号&nbsp;|&nbsp;苏ICP备09062682号-9</span>
+			</div>
+			<div class="dl_mian">
+				<div class="dl_zybf">
+					<div class="dl_tobj">
+						<span class="dl_wz1"><a href="#">帐号登录</a></span>
+						<span class="dl_xdx" style="color: #CCCCCC;">|</span>
+						<span class="dl_wz2"><a href="#">扫码登录</a></span>
+					</div>
+					<div class="dl_st">
+						<input type="text" placeholder="手机号/邮件地址/华为号" name="tt" class="st_1" style="border-bottom: solid 1px #CCCCCC;">
+						<input type="password" placeholder="密码" class="st_2"  style="border-bottom: solid 1px #CCCCCC;">
+						<div class="yanz">
+							 <a href="#"><img src="img/ic_smsLogin.png" class="shoujitu"></a><a href="#"><p class="zhengma">短信验证码登录</p></a>
+						</div>
+							<a href="index.html"><input type="button" class="dl_dl" value="登录"></a>
+							<input type="checkbox" class="jzmm"><span class="jmm_wz1">记住华为帐号</span>
+							<a href="#" class="jmm_gd">更多</a>
+						<div class="xddddd">
+							<a href="#" class="xz1">注册帐号</a>&nbsp;&nbsp;<span class="xdd">|</span>&nbsp;&nbsp;<a href="#" class="xz2">忘记密码？</a>
+						</div>
+					</div>
+					<div class="dl_xia">
+						<img src="img/下.png" class="xia_tu">
+						<a href="#" class="QQ"><img src="img/QQ.png" class="QQQ"></a>
+						<a href="#" class="zhii"><img src="img/zhi.png" class="zhi"></a>
+						<a href="#" class="wwww"><img src="img/wwx.png" class="www"></a>
+					</div>
+				</div>
+			</div>
+			<img src="img/bj.png" class="ttttttt">
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript">
+			var nam = $.cookie("nidemingzi");
+			var pad = $.cookie("nidemima");
+			$("input:eq(0)").val(nam);
+			$("input:eq(1)").val(pad);
+			$("input:eq(2)").click(function(){
+				if($("input:eq(3)").prop("checked") == true){
+					//获取需要存的账号密码
+					var nam = $("input:eq(0)").val();
+					var pad = $("input:eq(1)").val();
+					//存
+					$.cookie("nidemingzi",nam);
+					$.cookie("nidemima",pad);
+					//弹窗
+					alert("登录成功念念不忘忘不掉你");
+				}else{
+					alert("登录成功只是过客忘掉了你");
+				}
+			})
+			$(".dl_wz2").click(function(){
+				$(".dl_st").hide();
+				$(".dl_st").show("<div style='width: 100px;height: 100px;background: red;'></div>");
+			})
+		</script>
+	</body>
+</html>
